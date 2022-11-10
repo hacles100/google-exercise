@@ -3,10 +3,15 @@ import './Result.css';
 
 function Result(props) {
 
+    const remove = () => {
+        
+    }
+
     return <div className='result-item'>
         <span>{props.url}</span>
         <h4><Link to='/videos'>{props.title}</Link></h4>
         <p>{props.summary}</p>
+        <button onClick={remove}>Eliminar</button>
     </div>
 
 }
