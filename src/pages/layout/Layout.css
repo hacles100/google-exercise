@@ -1,0 +1,28 @@
+nav {
+    padding: 10px 50px;
+    border-bottom: 1px solid #ccc
+}
+
+nav a {
+    padding: 5px;
+}
+
+aside {
+
+
+    padding: 20px;
+    border-right: 1px solid #ccc
+}
+
+.midle-section .content {
+    padding: 20px 40px
+}
+
+.midle-section {
+    display: flex
+}
+
+footer {
+    border: 1px solid #ccc;
+    padding: 20px 40px
+}

@@ -1,0 +1,24 @@
+.result-item {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.result-item span {
+    font-size: 14px;
+    color: grey
+}
+
+.result-item h4 {
+    color: blue
+}
+
+.result-item {
+    margin: 20px
+}
+
+.result-item a {
+    text-decoration: none;
+}
