@@ -9,6 +9,7 @@ function Layout() {
             <Link to='/'>All</Link>
             <Link to='/images'>Images</Link>
             <Link to='/videos'>Videos</Link>
+            <Link to='/counter'>CounterPage</Link>
         </nav>
 
         <div className='midle-section'>
