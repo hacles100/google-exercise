@@ -1,4 +1,6 @@
-import Pagination from "../pagination/Pagination"
+import { useState } from "react"
+
+import './Pagination3.css'
 
 function Pagination3(){
 
@@ -40,17 +42,40 @@ function Pagination3(){
         },
     ])
 
+    let [pos, setPos] = useState(0)
+
+
+    function next() {
+
+        setPos(pos+1)
+    }
+
+
+    function previous() {
+
+        setPos(pos-1)
+    }
 
     return(
         <div>
-            <h1>Pagination3</h1>
-            
-            {person.map((item)=> <Pagination
-            name={item.name}
-            age={item.age}
-            bio={item.bio} 
-            email={item.email}
-            />)}
+
+            <div className="top-menu">
+                 {person.map((item, i)=> 
+                    <div key={i}>{item.name}</div>
+                 )}
+            </div>
+
+
+            <div className="display-info">
+                <button onClick={previous}>Previous</button>
+                <div>
+                    Name: {person[pos].name}
+                    Age: {person[pos].age}
+                    Bio: {person[pos].bio}
+                    Email: {person[pos].email}
+                </div>
+                <button onClick={next}>Next</button>
+            </div>
 
 
         </div>

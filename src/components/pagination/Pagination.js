@@ -1,13 +1,10 @@
+import './Pagination.css'
 
 function Pagination(props) {
 
     return(
-        <div>
+        <div className="pagination-container">
             <span>{props.name}</span>
-            <span>{props.age}</span>
-            <span>{props.bio}</span>
-            <span>{props.email}</span>
-    
         </div>
     )
 }
