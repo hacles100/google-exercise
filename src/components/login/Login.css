@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-color: #eee;
+}
+
+.login {
+
+    border: 2px solid black;
+    height: 200px;
+    width: 600px;
+    border-radius: 6px;
+    margin-left: 200px;
+}
+
+
+.login label, input {
+    
+    display: inline-block;
+}
+
+.login button{
+
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    height: 20px;
+    width: 80px;
+    cursor: pointer;
+}

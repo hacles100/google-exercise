@@ -65,16 +65,22 @@ function Pagination3(){
         }else {
             alert('Primeiro nome')
         }
-
-        
     }
+
+
+
+    function isApresenta(i){
+        return i==pos? 'apresenta': '' 
+    }
+
+
 
     return(
         <div>
 
             <div className="top-menu">
                  {person.map((item, i)=> 
-                    <div key={i}>{item.name}</div>
+                    <div key={i} className={isApresenta(i)} onClick={(e) => setPos(i)}>{item.name}</div>
                  )}
             </div>
 

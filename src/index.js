@@ -9,6 +9,7 @@ import Videos from './pages/videos/Videos';
 import reportWebVitals from './reportWebVitals';
 import Counter from './pages/counter/Counter';
 import NewPage from './pages/newPage/NewPage';
+import LoginPage from './pages/loginPage/LoginPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
           <Route path="videos" element={<Videos />} />
           <Route path="counter" element={<Counter />} />
           <Route path="newPage" element={<NewPage />} />
+          <Route path="loginPage" element={<LoginPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
