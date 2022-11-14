@@ -47,13 +47,26 @@ function Pagination3(){
 
     function next() {
 
-        setPos(pos+1)
+        if(pos < person.length-1){
+            setPos(pos+1)
+        }else{
+            alert('Fim dos nomes')
+        }
+
+        
     }
 
 
     function previous() {
 
-        setPos(pos-1)
+        if(pos !== 0){
+
+            setPos(pos-1)
+        }else {
+            alert('Primeiro nome')
+        }
+
+        
     }
 
     return(
@@ -69,9 +82,9 @@ function Pagination3(){
             <div className="display-info">
                 <button onClick={previous}>Previous</button>
                 <div>
-                    Name: {person[pos].name}
-                    Age: {person[pos].age}
-                    Bio: {person[pos].bio}
+                    Name: {person[pos].name} <br/>
+                    Age: {person[pos].age} <br/>
+                    Bio: {person[pos].bio} <br/>
                     Email: {person[pos].email}
                 </div>
                 <button onClick={next}>Next</button>
