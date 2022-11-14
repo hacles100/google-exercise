@@ -10,6 +10,7 @@ function Layout() {
             <Link to='/images'>Images</Link>
             <Link to='/videos'>Videos</Link>
             <Link to='/counter'>CounterPage</Link>
+            <Link to='/newPage'>NewPage</Link>
         </nav>
 
         <div className='midle-section'>

@@ -8,6 +8,7 @@ import Layout from './pages/layout/Layout';
 import Videos from './pages/videos/Videos';
 import reportWebVitals from './reportWebVitals';
 import Counter from './pages/counter/Counter';
+import NewPage from './pages/newPage/NewPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
           <Route path="images" element={<Images />} />
           <Route path="videos" element={<Videos />} />
           <Route path="counter" element={<Counter />} />
+          <Route path="newPage" element={<NewPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
