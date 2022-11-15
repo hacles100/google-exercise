@@ -10,24 +10,53 @@ function Phone() {
     const searchRef = useRef();
     const [phoneBookList, setPhoneBookList] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
-    console.log(phoneBookList);
+    const [resultActive, setResultActive] = useState([]);
+    
 
 
-    function add() {
+   function add() {
+
+         
         const name = nameRef.current.value;
         const phone = phoneRef.current.value;
+        // const date = dateRef.current.value;
+
+        const foundContact = phoneBookList.find(newContact => newContact.name === name)
+
+        if(foundContact!==undefined){
+            alert('contact exist in list')
+            return
+        }
 
         const newContact = {
             name: name,
-            phone: phone
+            phone: phone,
+            createdAt: new Date()
         }
 
         phoneBookList.push(newContact);
 
-        console.log(phoneBookList);
+        // phoneBookList.sort((a,b) => 
+        // a.name.toLowerCase()>b.name.toLowerCase()?1:-1);
 
-        setPhoneBookList([...phoneBookList]);
+
+        // console.log(phoneBookList);
+
+        setPhoneBookList([...phoneBookList.sort])
     }
+
+
+
+
+        const editar = i => {
+            const editContact = phoneBookList[i]
+            nameRef.current.value = editContact.name
+            phoneRef.current.value = editContact.phone
+            removeFromList()
+        }
+
+
+
 
     function search() {
         let results = [];
@@ -35,11 +64,12 @@ function Phone() {
         
         for (let contact of phoneBookList) {
 
-    if(contact.name.toLowerCase() == searchValue.toLowerCase()) {
+    if(contact.name.toLowerCase().includes(searchValue.toLowerCase())) {
                 results.push(contact);
             }
         }
         setSearchResult(results);
+        setResultActive(true)
     }
 
 
@@ -47,6 +77,7 @@ function Phone() {
         
       searchRef.current.value = null
       setSearchResult([])
+      setResultActive(false)
     
     }
 
@@ -59,13 +90,14 @@ function Phone() {
 
 
 
+
     return <div className="wrapper">
 
      {phoneBookList.map((item, i) => <div
             key={i}
             name={item.name}
             phone={item.phone}
-            // remove={() => removeFromList(i)}
+
         />)}
 
         <div className="left">
@@ -84,11 +116,16 @@ function Phone() {
             </div>
 
             <h4>My contact list:</h4>
+
+            {phoneBookList.length===0 && <span>No contact in your phonebook!</span>}
+        
             {phoneBookList.map((contact, i)=>
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>
                     Phone: {contact.phone} <br/>
+                    createdAt: {contact.createdAt.toLocaleString()} <br/>
                     <button onClick={(e)=> removeFromList(i)}>Eliminar</button>
+                    <button onClick={(e)=> editar(i)}>Editar</button>
                 </div>
             )}
         </div>
@@ -99,7 +136,8 @@ function Phone() {
             <button onClick={clear}>Clear</button>
 
             <h4>Search result:</h4>
-
+            
+            <span>{resultActive}</span>
             {searchResult.map((contact, i)=>
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>

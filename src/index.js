@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import Counter from './pages/counter/Counter';
 import NewPage from './pages/newPage/NewPage';
 import LoginPage from './pages/loginPage/LoginPage';
+import TablePage from './pages/TablePage/TablePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
           <Route path="counter" element={<Counter />} />
           <Route path="newPage" element={<NewPage />} />
           <Route path="loginPage" element={<LoginPage />} />
+          <Route path="TablePage" element={<TablePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

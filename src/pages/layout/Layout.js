@@ -12,6 +12,7 @@ function Layout() {
             <Link to='/counter'>CounterPage</Link>
             <Link to='/newPage'>NewPage</Link>
             <Link to='/loginPage'>Login</Link>
+            <Link to='/TablePage'>Table Page</Link>
         </nav>
 
         <div className='midle-section'>
