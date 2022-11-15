@@ -34,21 +34,20 @@ function Phone() {
         const searchValue = searchRef.current.value;
         
         for (let contact of phoneBookList) {
-            // if(contact.name=iuyjhgb hjko
-            p[]# n/l@P:
-            
-             == searchValue) {
+
+    if(contact.name.toLowerCase() == searchValue.toLowerCase()) {
                 results.push(contact);
             }
         }
-        setSearchResult(results);xaz
+        setSearchResult(results);
     }
 
 
     function clear() {
         
-        searchRef.current.value = null
-        setSearchResult([])
+      searchRef.current.value = null
+      setSearchResult([])
+    
     }
 
     const removeFromList = i => {
