@@ -33,16 +33,25 @@ useEffect(() => {
   // update char count (including whitespaces)
   setCharCount(text.length);
 }, [text]);
-    
+
+
+  
     return(
         <div className='container'>
-            <h1>Digite um texto qualquer:</h1> <br/>
+          <div>
+            <h1>Digite um texto:</h1> <br/>
             <textarea value={text} onChange={changeHandler}></textarea> <br/>
-            <div>
             <p className='word-count'>Word Count: {wordCount}</p>
             <p className='char-count'>
             Character Count (Including Whitespaces): {charCount}
           </p>
+        </div>
+
+        <div>
+            <h1>Digite um texto:</h1> <br/>
+            <textarea></textarea> <br/>
+           <button>Counter</button>
+           <span>{} se repete vezes no campo de texto</span>
         </div>
         </div>
     )
