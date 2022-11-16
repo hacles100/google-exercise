@@ -1,43 +1,27 @@
-import './Table.css'
+import "./Table.css";
 
 function Table(props) {
 
-    return(
-        <div>
-            <h1>Tabelas</h1>
-            <table>
-  <tr>
-    <th>Id</th>
-    <th>FirstName</th>
-    <th>LastName</th>
-    <th>Gender</th>
-    <th>City</th>
-  </tr>
-  <tr>
-    <td>{props.id[0]}</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
 
-</table>
+  return <table>
 
-        </div>
-    )
+      <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Gender Name</th>
+      </thead>
+      <tbody>
+          {props.list.map((person, i) =>
+              <tr key={i}>
+                  <td>{person.firstName}</td>
+                  <td>{person.lastName}</td>
+                  <td>{person.gender}</td>
+                  <td><button onClick={() => props.rm(i)}>Remover</button></td>
+              </tr>
+          )}
+      </tbody>
+
+  </table>
 }
 
-export default Table
+export default Table;

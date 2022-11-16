@@ -1,42 +1,55 @@
+
+import { useState } from "react"
 import Table from "../../components/table/Table"
+import Time from "../../components/time/Time";
 
 
 function TablePage() {
 
-    const lista = ([
-
+    const [listOfPersons, setListOfPerson] = useState([
         {
-            id: 1,
-            FirstName: 'Sim',
-            LastName: 'Rohan',
-            Gender: 'male',
-            city: 'Emelieville'
+           firstName:'Bruno',
+           lastName:'Cardoso',
+           gender:'Male',
         },
-
         {
-            id: 2,
-            FirstName: 'Hericles',
-            LastName: 'Rocha',
-            Gender: 'male',
-            city: 'New York'
+           firstName:'Joana',
+           lastName:'Fernandes',
+           gender:'Female',
         },
-
         {
-            id: 3,
-            FirstName: 'Idileine',
-            LastName: 'Barros',
-            Gender: 'female',
-            city: 'New York'
+           firstName:'Pedro',
+           lastName:'Garcia',
+           gender:'Male',
         },
-
+        {
+           firstName:'Ilda',
+           lastName:'Barbosa',
+           gender:'Female',
+        },
+        {
+           firstName:'Mira',
+           lastName:'Sanches',
+           gender:'Female',
+        }
     ])
 
-    return(
-        <div>
-            <h1>Table Page</h1>
-            <Table />
-        </div>
-    )
+    
+    function removeFromList(i) {
+        listOfPersons.splice(i, 1);
+
+        const newList = [...listOfPersons];
+        setListOfPerson(newList);
+    }
+
+    return <>
+        <h1>My table page</h1>  <br/>
+
+        <Time/>
+        <br/>
+        <Table list={listOfPersons} rm={removeFromList}/>
+
+    </>
 }
 
-export default TablePage
+export default TablePage;
