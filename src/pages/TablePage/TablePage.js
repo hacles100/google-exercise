@@ -1,5 +1,6 @@
 
 import { useState } from "react"
+import Continua from "../../components/continua/Continua";
 import Table from "../../components/table/Table"
 import Time from "../../components/time/Time";
 
@@ -48,6 +49,8 @@ function TablePage() {
         <Time/>
         <br/>
         <Table list={listOfPersons} rm={removeFromList}/>
+        <br/>
+        <Continua/>
 
     </>
 }
